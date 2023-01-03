@@ -1,0 +1,25 @@
+import os
+if __name__ == "__main__":
+    root_dir = "C:\\Users\\kim\\Desktop\\kai re sei"
+    for (root, dirs, files) in os.walk(root_dir):
+        print("# root : " + root)
+        if len(dirs) > 0:
+            for dir_name in dirs:
+                print("dir: " + dir_name)
+
+        if len(files) > 0:
+            for file_name in files:
+                f1=file_name.replace('.webp',' ')
+                f4=f1.replace('.png',' ')
+                f2=f4[0:8] #숫자
+                for j in f1:
+                    c=f4.find('[')
+                    f3=f4[c:len(f1)]
+                    print('"'+f2+'"'+f3+'"')
+                f = open("C:/Users/kim/Desktop/111.txt", 'a', encoding='UTF8')
+                f.write('"'+f2+'"'+f3+'"''\n')
+                f.close()
+
+#f = open("C:/Users/kim/Desktop/111.txt",'tw',encoding='UTF8')
+#f.write(Extension)
+# #'C:\\Users\\kim\\Desktop\\kai re sei'
